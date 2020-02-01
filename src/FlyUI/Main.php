@@ -15,21 +15,21 @@ class Main extends PluginBase implements Listener {
 
     public function onEnable() {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);    
-        $this->getLogger()->info(TextFormat::GREEN . "Enabled!");
+        $this->getLogger()->info(TextFormat::GREEN . "Aktiviert!");
     }
 
     public function onDisable() {
 $this->getServer()->getPluginManager()->registerEvents($this,$this);
-        $this->getLogger()->info(TextFormat::RED . "Disabled!");
+        $this->getLogger()->info(TextFormat::RED . "Aus!");
     }
 
     public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool {
         switch($cmd->getName()){                    
-            case "fly":
-                if ($sender->hasPermission("fly.command")){
+            case "Fly":
+                if ($sender->hasPermission("fly.cmd")){
                      $this->openMyForm($sender);
                 }else{     
-                     $sender->sendMesseage(TextFormat::RED . "You do not have permission to use this command!");
+                     $sender->sendMesseage(TextFormat::RED . "Du Hast Keine rechte!");
                      return true;
                 }     
             break;         
@@ -47,25 +47,25 @@ $this->getServer()->getPluginManager()->registerEvents($this,$this);
             }             
             switch($result){
                 case 0:
-                    $player->sendMessage(TextFormat::GREEN . "Enabled flight mode!");
-                    $player->addTitle("§l§6Fly", "§a§lEnable");
+                    $player->sendMessage(TextFormat::GREEN . "Aktiviert dein Fliegen!");
+                    $player->addTitle("§l§4Fly", "§a§lAktiviert");
                     $player->setAllowFlight(true);
                 break;
                     
                 case 1:
-                    $player->sendMessage(TextFormat::RED . "Disabled flight mode!");
-                    $player->addTitle("§l§6Fly", "§c§lDisable");
+                    $player->sendMessage(TextFormat::RED . "Fliegen Deaktiviert! Made by Crow Balde");
+                    $player->addTitle("§l§4Fly", "§c§lDeaktiviert");
                     $player->setAllowFlight(false);
                 break;
             }
             
             
             });
-            $form->setTitle("§l§6FlyUI");
-            $form->setContent("Chose option please!");
-            $form->addButton("§lEnable");
-            $form->addButton("§lDisable");
-            $form->addButton("§l§cExit");
+            $form->setTitle("§l§9FlyUI Von Crow Balde");
+            $form->setContent("ent(" was Aus !");
+            $form->addButton("§l§4Aktiviert");
+            $form->addButton("§l§4Deaktiviert");
+            $form->addButton("§l§4Verlassen");
             $form->sendToPlayer($player);
             return $form;                                            
     }
