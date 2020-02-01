@@ -6,6 +6,6 @@ author: Misael38
 github: https://github.com/misael38
 
 commands:
- fly:
-  description: Fly Main Command
-  permission: fly.command
+ Fly:
+  description: §4Aktiviere Fly
+  permission: fly.cmd
