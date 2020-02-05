@@ -15,12 +15,12 @@ class Main extends PluginBase implements Listener {
 
     public function onEnable() {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);    
-        $this->getLogger()->info(TextFormat::GREEN . "Enabled!");
+        $this->getLogger()->info(TextFormat::GREEN . "Aktiviert!");
     }
 
     public function onDisable() {
 $this->getServer()->getPluginManager()->registerEvents($this,$this);
-        $this->getLogger()->info(TextFormat::RED . "Disabled!");
+        $this->getLogger()->info(TextFormat::RED . "Deaktiviert!");
     }
 
     public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool {
@@ -29,7 +29,7 @@ $this->getServer()->getPluginManager()->registerEvents($this,$this);
                 if ($sender->hasPermission("fly.command")){
                      $this->openMyForm($sender);
                 }else{     
-                     $sender->sendMesseage(TextFormat::RED . "You do not have permission to use this command!");
+                     $sender->sendMesseage(TextFormat::RED . "Du Hast Keine Rechte Fur Diesen Command");
                      return true;
                 }     
             break;         
@@ -47,14 +47,14 @@ $this->getServer()->getPluginManager()->registerEvents($this,$this);
             }             
             switch($result){
                 case 0:
-                    $player->sendMessage(TextFormat::GREEN . "Enabled flight mode!");
-                    $player->addTitle("§l§6Fly", "§a§lEnable");
+                    $player->sendMessage(TextFormat::GREEN . "Aktiviert FlyMOD!");
+                    $player->addTitle("§l§6Fly", "§a§lAktiviert");
                     $player->setAllowFlight(true);
                 break;
                     
                 case 1:
-                    $player->sendMessage(TextFormat::RED . "Disabled flight mode!");
-                    $player->addTitle("§l§6Fly", "§c§lDisable");
+                    $player->sendMessage(TextFormat::RED . "Deaktiviert FlyMOD!");
+                    $player->addTitle("§l§6Fly", "§c§lDeaktiviert FlyMOD");
                     $player->setAllowFlight(false);
                 break;
             }
@@ -62,10 +62,10 @@ $this->getServer()->getPluginManager()->registerEvents($this,$this);
             
             });
             $form->setTitle("§l§6FlyUI");
-            $form->setContent("Chose option please!");
-            $form->addButton("§lEnable");
-            $form->addButton("§lDisable");
-            $form->addButton("§l§cExit");
+            $form->setContent("Wahle Eine Option!");
+            $form->addButton("§lAktiviert");
+            $form->addButton("§lDeaktiviert");
+            $form->addButton("§l§cFlyUI Schlissen");
             $form->sendToPlayer($player);
             return $form;                                            
     }
