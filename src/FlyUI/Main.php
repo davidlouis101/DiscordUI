@@ -1,6 +1,6 @@
 <?php
 
-namespace FlyUI;
+namespace DiscordUI;
 
 use pocketmine\Server;
 use pocketmine\Player;
@@ -25,8 +25,8 @@ $this->getServer()->getPluginManager()->registerEvents($this,$this);
 
     public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool {
         switch($cmd->getName()){                    
-            case "fly":
-                if ($sender->hasPermission("fly.command")){
+            case "DC":
+                if ($sender->hasPermission("DC.command")){
                      $this->openMyForm($sender);
                 }else{     
                      $sender->sendMesseage(TextFormat::RED . "Du Hast Keine Rechte Fur Diesen Command");
@@ -47,25 +47,23 @@ $this->getServer()->getPluginManager()->registerEvents($this,$this);
             }             
             switch($result){
                 case 0:
-                    $player->sendMessage(TextFormat::GREEN . "Aktiviert FlyMOD!");
+                    $player->sendMessage(TextFormat::GREEN . "Discord: https://discord.gg/rrf3gqh");
                     $player->addTitle("§l§6Fly", "§a§lAktiviert");
-                    $player->setAllowFlight(true);
                 break;
                     
                 case 1:
-                    $player->sendMessage(TextFormat::RED . "Deaktiviert Dein FlyMOD!");
-                    $player->addTitle("§l§6Fly", "§c§lDeaktiviert Deib FlyMOD");
-                    $player->setAllowFlight(false);
+                    $player->sendMessage(TextFormat::RED . "Discord: https://discord.gg/rrf3gqh!");
+                    $player->addTitle("§l§6Fly", "§c§lDiscord : https://discord.gg/rrf3gqh");
                 break;
             }
             
             
             });
-            $form->setTitle("§l§6FlyUI");
+            $form->setTitle("§l§6DiscordUI");
             $form->setContent("§4§lWahle Eine Option!");
-            $form->addButton("§lAktiviert\On");
-            $form->addButton("§lDeaktiviert\Off");
-            $form->addButton("§l§cFlyUI Schlissen\Close");
+            $form->addButton("§lDiscord : https://discord.gg/rrf3gqh");
+            $form->addButton("§lDiscord : https://discord.gg/rrf3gqh");
+            $form->addButton("§l§cDiscordUI Schlissen\Close");
             $form->sendToPlayer($player);
             return $form;                                            
     }
