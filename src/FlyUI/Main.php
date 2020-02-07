@@ -53,8 +53,8 @@ $this->getServer()->getPluginManager()->registerEvents($this,$this);
                 break;
                     
                 case 1:
-                    $player->sendMessage(TextFormat::RED . "Deaktiviert FlyMOD!");
-                    $player->addTitle("§l§6Fly", "§c§lDeaktiviert FlyMOD");
+                    $player->sendMessage(TextFormat::RED . "Deaktiviert Dein FlyMOD!");
+                    $player->addTitle("§l§6Fly", "§c§lDeaktiviert Deib FlyMOD");
                     $player->setAllowFlight(false);
                 break;
             }
@@ -62,10 +62,10 @@ $this->getServer()->getPluginManager()->registerEvents($this,$this);
             
             });
             $form->setTitle("§l§6FlyUI");
-            $form->setContent("Wahle Eine Option!");
-            $form->addButton("§lAktiviert");
-            $form->addButton("§lDeaktiviert");
-            $form->addButton("§l§cFlyUI Schlissen");
+            $form->setContent("§4§lWahle Eine Option!");
+            $form->addButton("§lAktiviert\On");
+            $form->addButton("§lDeaktiviert\Off");
+            $form->addButton("§l§cFlyUI Schlissen\Close");
             $form->sendToPlayer($player);
             return $form;                                            
     }
