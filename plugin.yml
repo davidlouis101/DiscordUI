@@ -6,6 +6,6 @@ author: Misael38
 github: https://github.com/misael38
 
 commands:
- fly:
-  description: §4FlyUI Command
-  permission: fly.command
+ DC:
+  description: §4DC Command
+  permission: DC.command
