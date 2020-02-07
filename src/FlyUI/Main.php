@@ -1,6 +1,6 @@
 <?php
 
-namespace DiscordUI;
+namespace DiscordUI\Main;
 
 use pocketmine\Server;
 use pocketmine\Player;
@@ -48,12 +48,12 @@ $this->getServer()->getPluginManager()->registerEvents($this,$this);
             switch($result){
                 case 0:
                     $player->sendMessage(TextFormat::GREEN . "Discord: https://discord.gg/rrf3gqh");
-                    $player->addTitle("§l§6Fly", "§a§lAktiviert");
+                    $player->addTitle("§l§6Discord", "§a§lhttps://discord.gg/rrf3gqh");
                 break;
                     
                 case 1:
                     $player->sendMessage(TextFormat::RED . "Discord: https://discord.gg/rrf3gqh!");
-                    $player->addTitle("§l§6Fly", "§c§lDiscord : https://discord.gg/rrf3gqh");
+                    $player->addTitle("§l§6DC", "§c§lDiscord : https://discord.gg/rrf3gqh");
                 break;
             }
             
